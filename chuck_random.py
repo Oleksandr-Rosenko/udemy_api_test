@@ -60,5 +60,7 @@ class  tes_new_joke ():
 # random_joke.test_create_new_random_joke()
 sport_joke = tes_new_joke()
 sport_joke.test_create_new_categories_joke()
+sport_joke.test_create_new_categories_joke(111)
+
 
 
