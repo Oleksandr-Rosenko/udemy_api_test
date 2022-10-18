@@ -80,7 +80,8 @@ class test_new_location ():
         assert check_info_put == "Address successfully updated"
         print("MSG is true")
 
-        """ Cheking editing  the new location"""
+        """ Cheсking editing  the new location"""
+
         result_get = requests.get(get_url)
         print(result_get.text)
         print("Status Code:" + str(result_get.status_code))
@@ -95,5 +96,27 @@ class test_new_location ():
         assert check_address_info == "100 Lenina street,RU"
         print("MSG is true")
 
+        """ Delete resource  the new location"""
+
+        delete_resource = "/maps/api/place/delete/json"
+        delete_url = base_url + delete_resource + key
+        print(delete_url)
+        json_for_delete_location = {
+            "place_id": place_id
+        }
+        result_delete = requests.delete(delete_url, json = json_for_delete_location )
+        print(result_delete.text)
+        print("Status Code:" + str(result_delete.status_code))
+        assert 200 == result_delete.status_code
+        if result_delete.status_code == 200:
+            print("Checking  status deleting the new location: Successful ")
+        else:
+            print("Fail")
+        check_delete = result_delete.json()
+        check_delete_status = check_delete.get("status")
+        print("Message: " + check_delete_status)
+        assert check_delete_status == "OK"
+        print("MSG is true")
+        print("Testing Test_new_location - successfully finished !!!")
 new_place = test_new_location()
 new_place.test_create_new_location()
