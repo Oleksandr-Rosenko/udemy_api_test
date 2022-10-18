@@ -80,6 +80,20 @@ class test_new_location ():
         assert check_info_put == "Address successfully updated"
         print("MSG is true")
 
+        """ Cheking editing  the new location"""
+        result_get = requests.get(get_url)
+        print(result_get.text)
+        print("Status Code:" + str(result_get.status_code))
+        assert 200 == result_get.status_code
+        if result_get.status_code == 200:
+            print("Checking  status editing the new location: Successful ")
+        else:
+            print("Fail")
+        check_address = result_get.json()
+        check_address_info = check_address.get("address")
+        print("Message: " + check_address_info)
+        assert check_address_info == "100 Lenina street,RU"
+        print("MSG is true")
 
 new_place = test_new_location()
 new_place.test_create_new_location()
