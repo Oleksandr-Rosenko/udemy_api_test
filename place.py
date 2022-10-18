@@ -5,7 +5,7 @@ class test_new_location ():
     def test_create_new_location(self):
         """"Create new location"""
         base_url = "https://rahulshettyacademy.com"
-        key = "?key = qaclick123"
+        key = "?key=qaclick123"
         post_resource = "/maps/api/place/add/json"
 
         post_url = base_url + post_resource + key
