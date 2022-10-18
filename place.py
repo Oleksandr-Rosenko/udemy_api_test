@@ -56,5 +56,30 @@ class test_new_location ():
         else:
             print("Fail")
 
+        """Editing  the new location"""
+
+        put_resource = "/maps/api/place/update/json"
+        put_url = base_url + put_resource + key
+        print(put_url)
+        json_for_update_new_location ={
+            "place_id": place_id,
+            "address": "100 Lenina street,RU",
+            "key": "qaclick123"
+        }
+        result_put = requests.put(put_url,json = json_for_update_new_location)
+        print(result_put.text)
+        print("Status Code:" + str(result_put.status_code))
+        assert 200 == result_put.status_code
+        if result_put.status_code == 200:
+            print("Status update new location: Successful ")
+        else:
+            print("Fail")
+        check_put =  result_put.json()
+        check_info_put =  check_put.get("msg")
+        print("Message: " + check_info_put)
+        assert check_info_put == "Address successfully updated"
+        print("MSG is true")
+
+
 new_place = test_new_location()
 new_place.test_create_new_location()
