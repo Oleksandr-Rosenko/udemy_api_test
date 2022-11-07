@@ -1,5 +1,4 @@
 from requests import Response
-
 from utils.api import Google_maps_api
 
 
