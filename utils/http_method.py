@@ -1,9 +1,11 @@
 import requests
 """List of http methods"""
 
+
 class http_methods:
     headers = {'Content-Type': 'application/json'}
     cookie = ""
+
     @staticmethod
     def get(url):
         result = requests.get(url, headers=http_methods, cookies=http_methods.cookie)
@@ -23,4 +25,3 @@ class http_methods:
     def delete(url, body):
         result = requests.delete(url, json=body, headers=http_methods, cookies=http_methods.cookie)
         return result
-

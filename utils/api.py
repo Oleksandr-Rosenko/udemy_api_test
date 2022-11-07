@@ -12,8 +12,8 @@ class Google_maps_api():
 
         json_for_create_new_place = {
             "location": {
-            "lat": -38.383494,
-            "lng": 33.427362
+                "lat": -38.383494,
+                "lng": 33.427362
             }, "accuracy": 50,
             "name": "Front line house",
             "phone_number": "(+91)9838933937",
