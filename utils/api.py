@@ -1,6 +1,6 @@
 from utils.http_method import http_methods
 
-"""Metods  for testing google maps API"""
+"""Metods for testing google maps API"""
 
 base_url = "https://rahulshettyacademy.com"
 key = "?key=qaclick123"
@@ -25,11 +25,9 @@ class Google_maps_api():
             "website": "http://google.com",
             "language": "French-IN"
         }
-        post_resource = "/maps/api/place/add/json" #resource of post method
+        post_resource = "/maps/api/place/add/json"
         post_url = base_url + post_resource + key
         print(post_url)
         result_post = http_methods.post(post_url, json_for_create_new_place)
         print(result_post.text)
         return result_post
-
-
