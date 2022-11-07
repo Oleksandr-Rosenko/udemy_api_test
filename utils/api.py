@@ -1,4 +1,4 @@
-from  utils.https_method import http_methods
+from utils.http_method import http_methods
 
 """Metods  for testing google maps API"""
 
@@ -11,11 +11,11 @@ class Google_maps_api():
     def create_new_place():
 
         json_for_create_new_place = {
-            "location":{
-            "lat":-38.383494,
-            "lng":33.427362
-            },"accuracy":50,
-            "name":"Front line house",
+            "location": {
+            "lat": -38.383494,
+            "lng": 33.427362
+            }, "accuracy": 50,
+            "name": "Front line house",
             "phone_number": "(+91)9838933937",
             "address": "29,side layout,cohen 09",
             "types": [
