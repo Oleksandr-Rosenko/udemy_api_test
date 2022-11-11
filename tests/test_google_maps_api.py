@@ -2,7 +2,7 @@ from requests import Response
 from utils.api import Google_maps_api
 
 
-"""Creating,edidting,deleteing location"""
+"""Creating,edite,delete location"""
 class Test_create_place():
 
     def test_create_new_place(self):

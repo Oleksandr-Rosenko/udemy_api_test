@@ -1,4 +1,4 @@
-from utils.http_method import http_methods
+from utils.http_method import Http_methods
 
 """Metods for testing google maps API"""
 
@@ -28,6 +28,6 @@ class Google_maps_api():
         post_resource = "/maps/api/place/add/json"
         post_url = base_url + post_resource + key
         print(post_url)
-        result_post = http_methods.post(post_url, json_for_create_new_place)
+        result_post = Http_methods.post(post_url, json_for_create_new_place)
         print(result_post.text)
         return result_post
