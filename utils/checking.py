@@ -18,6 +18,16 @@ class Checking():
         assert list(token) == expected_value
         print(" All fields is present")
 
+    """Cheking value required fields"""
+    @staticmethod
+    def check_json_value(response: Response,field_name, expected_value):
+        check = response.json()
+        check_info = check.get(field_name)
+        assert check_info == expected_value
+        print(field_name + "\n True")
+
+
+
 
 
 
